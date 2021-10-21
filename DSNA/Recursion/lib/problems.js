@@ -148,7 +148,14 @@ function flatten(data) {}
 // fileFinder(desktop, 'app_academy_logo.svg');     // => true
 // fileFinder(desktop, 'everlong.flac');            // => true
 // fileFinder(desktop, 'sequoia.jpeg');             // => false
-function fileFinder(directories, targetFile) {}
+function fileFinder(directories, targetFile) {
+  for (let key in directories) {
+    if (key === targetFile || fileFinder(directories[key], targetFile)) {
+      return true;
+    }
+  }
+  return false;
+}
 
 // Write another function, pathFinder(directories, targetFile), that returns the path that contains the targetFile.
 // If the targetFile is not found in the directories, then return null.
@@ -159,7 +166,17 @@ function fileFinder(directories, targetFile) {}
 // pathFinder(desktop, 'trixie_lou.jpeg'));     // => '/images/pets/trixie_lou.jpeg'
 // pathFinder(desktop, 'everlong.flac'));       // => '/music/genres/rock/everlong.flac'
 // pathFinder(desktop, 'honeybadger.png'));     // => null
-function pathFinder(directories, targetFile) {}
+function pathFinder(directories, targetFile) {
+  for (let key in directories) {
+    if (key === targetFile) return '/' + targetFile;
+
+    let path = pathFinder(directories[key], targetFile);
+    if (path !== null) {
+      return key + path;
+    }
+  }
+  return null;
+}
 
 module.exports = {
   lucasNumber,

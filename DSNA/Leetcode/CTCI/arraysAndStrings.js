@@ -18,3 +18,15 @@ const isUnique = (str) => {
 // console.log(isUnique('aaaa'));
 // console.log(isUnique('bbaa'));
 // console.log(isUnique('abcd'));
+
+// Given two strings, write a method to decide if one is a permutation of the other.
+
+const isPermutation = (str1, str2) => {
+  const newStr1 = str1.split('').sort().join('');
+  const newStr2 = str2.split('').sort().join('');
+
+  return newStr1 === newStr2;
+};
+
+console.log(isPermutation('orange', 'naroeg'));
+console.log(isPermutation('oranges', 'naroego'));

@@ -28,5 +28,11 @@ const isPermutation = (str1, str2) => {
   return newStr1 === newStr2;
 };
 
-console.log(isPermutation('orange', 'naroeg'));
-console.log(isPermutation('oranges', 'naroego'));
+// console.log(isPermutation('orange', 'naroeg'));
+// console.log(isPermutation('oranges', 'naroego'));
+
+// Write a method to replace all spaces in a string with "%20"
+// Input: "Mr John Smith    "
+// Output: "Mr%20John%20Smith"
+
+const URLify = (str) => {};

@@ -38,3 +38,28 @@ const isPermutation = (str1, str2) => {
 const URLify = (str) => {
   //test
 };
+
+//Product of Array Except Self
+
+const productExceptSelf = (nums) => {
+  let left = [];
+  let leftMultiply = 1;
+
+  for (let i = 0; i < nums.length; i++) {
+    left[i] = leftMultiply;
+    leftMultiply *= nums[i];
+  }
+
+  let right = [];
+  let rightMultiply = 1;
+
+  for (let i = nums.length - 1; i >= 0; i--) {
+    right[i] = rightMultiply;
+    rightMultiply *= nums[i];
+    right[i] *= left[i];
+  }
+
+  return right;
+};
+
+console.log(productExceptSelf([1, 2, 3, 4]));

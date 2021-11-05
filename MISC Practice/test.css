@@ -1,0 +1,18 @@
+ul li {
+  list-style: decimal;
+}
+
+ul li:nth-child(3n):before {
+  content: 'fizz';
+  color: green;
+}
+
+ul li:nth-child(5n):after {
+  content: 'buzz';
+  color: blue;
+}
+
+ul li:nth-child(3n),
+ul li:nth-child(5n) {
+  list-style: none;
+}

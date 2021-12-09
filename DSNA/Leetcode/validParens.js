@@ -36,4 +36,4 @@ function validParens(str) {
 
 console.log(validParens('()[]{}'));
 console.log(validParens('([)]'));
-console.log(validParens('())))))'));
+console.log(validParens('()))))))'));
